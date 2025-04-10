@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Decodificador interestelar</title>
+<style>
+    body {
+      background-color: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+    .consola {
+      background-color: #001f1f;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .ascii-table {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 5px;
+      background-color: #003333;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .ascii-item {
+      padding: 5px;
+      background-color: #004d4d;
+      text-align: center;
+      border-radius: 4px;
+    }
+    input {
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #00ffcc;
+      padding: 5px;
+      font-family: inherit;
+      width: 100%;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #00ffcc;
+      border: none;
+      color: #000;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #mensajeFinal {
+      color: #ff66cc;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<h2>🛰️ Decodificador interestelar</h2>
+<div class="consola">
+📡 Transmisión enviada para: <strong>Cris</strong><br/><br/>
+🎁 Por tu cumpleaños, recibiste un mensaje especial de tu compañera en otra parte del universo. 
+Por seguridad interestelar, fue enviado en un parche bordado usando código ASCII.
+</div>
+<h3>🧠 ¿Cómo funciona ASCII?</h3>
+<p>Cada número representa una letra o símbolo. Mirá algunos ejemplos:</p>
+<div class="ascii-table"><div class="ascii-item">32 = (espacio)</div><div class="ascii-item">33 = !</div><div class="ascii-item">35 = #</div><div class="ascii-item">36 = $</div><div class="ascii-item">38 = &amp;</div><div class="ascii-item">48 = 0</div><div class="ascii-item">49 = 1</div><div class="ascii-item">50 = 2</div><div class="ascii-item">51 = 3</div><div class="ascii-item">52 = 4</div><div class="ascii-item">53 = 5</div><div class="ascii-item">65 = A</div><div class="ascii-item">66 = B</div><div class="ascii-item">67 = C</div><div class="ascii-item">68 = D</div><div class="ascii-item">69 = E</div><div class="ascii-item">70 = F</div><div class="ascii-item">71 = G</div><div class="ascii-item">97 = a</div><div class="ascii-item">98 = b</div><div class="ascii-item">99 = c</div><div class="ascii-item">100 = d</div><div class="ascii-item">101 = e</div><div class="ascii-item">102 = f</div><div class="ascii-item">103 = g</div><div class="ascii-item">104 = h</div><div class="ascii-item">105 = i</div><div class="ascii-item">109 = m</div><div class="ascii-item">111 = o</div><div class="ascii-item">114 = r</div><div class="ascii-item">115 = s</div><div class="ascii-item">116 = t</div><div class="ascii-item">117 = u</div></div>
+<h3>🧪 Descifrando...</h3>
+<p>¿Qué mensaje creés que quiso enviarte?</p>
+<input id="respuesta" placeholder="Escribí el mensaje (pista: 5 letras)" type="text"/>
+<button onclick="verificar()">Enviar transmisión</button>
+<div class="consola" id="contacto" style="display:none;">
+✅ ¡Transmisión decodificada correctamente! Se ha establecido contacto con tu compañera en otro planeta.<br/><br/>
+¿Deseás recibir el resto del mensaje?
+<br/><br/><button onclick="mostrarMensaje()">Recibir mensaje</button>
+</div>
+<div id="mensajeFinal">
+💌 <strong>Mensaje:</strong><br/><br/>
+Aun a tantos años luz de distancia, espero a través de este mensaje puedas sentir mi amor.<br/><br/>
+Hoy celebramos y agradecemos tu existencia, y yo celebro también ser parte de tu vida.<br/><br/>
+¡Feliz cumpleaños al increíble compañero que el universo me dio para atravesar esta aventura!<br/><br/>
+Que esta vuelta al sol esté acompañada de muchas experiencias nuevas y que la fuerza esté contigo para afrontar el resto de misiones.<br/><br/>
+<strong>Con amor, tu noviecita linda 💜</strong>
+</div>
+<script>
+function verificar() {
+  const input = document.getElementById("respuesta").value.trim().toLowerCase();
+  if (input === "te amo") {
+    document.getElementById("contacto").style.display = "block";
+  } else {
+    alert("🚫 Mensaje incorrecto. Intentá de nuevo usando la tabla ASCII.");
+  }
+}
+function mostrarMensaje() {
+  document.getElementById("mensajeFinal").style.display = "block";
+}
+</script>
+</body>
+</html>
